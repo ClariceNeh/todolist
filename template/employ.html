@@ -1,0 +1,30 @@
+{% extends "tech.html" %} {% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">password</th>
+      <th scope="col">email</th>
+      <th scope="col">image</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in user %}
+    <tr>
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.name}}</td>
+      <td>{{i.password}}</td>
+      <td>{{i.email}}</td>
+      <td><img src="{{i.image}}" alt=""></td> 
+
+      <td>
+        <button>update</button>
+        <button>delete</button>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
